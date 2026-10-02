@@ -1,0 +1,47 @@
+<!--
+Author: Kaleb Blakemore
+KUID: 3228599
+Date: 09/16/2026
+Lab: Lab #3
+Last modified: 09/18/2026
+Purpose: Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice 2 - CSS Font Control</title>
+    <style>
+        #sample-paragraph {
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Font and Border Control</h1>
+    <p id="sample-paragraph">This is some dummy text inside a paragraph element. Use the controls below to dynamically change the border width, border color, and text color.</p>
+    
+    <label for="colorInput">Color (Name or Hex/RGB): </label>
+    <input type="text" id="colorInput" value="black"><br><br>
+    
+    <label for="widthInput">Border Width (px): </label>
+    <input type="text" id="widthInput" value="2"><br><br>
+    
+    <button onclick="updateStyles()">Apply Styling</button>
+
+    <script>
+        function updateStyles() {
+            var colorVal = document.getElementById("colorInput").value;
+            var widthVal = document.getElementById("widthInput").value + "px";
+            var p = document.getElementById("sample-paragraph");
+            
+            p.style.color = colorVal;
+            p.style.borderColor = colorVal;
+            p.style.borderWidth = widthVal;
+            p.style.borderStyle = "solid";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!--
+Author: Kaleb Blakemore
+KUID: 3228599
+Date: 09/16/2026
+Lab: Lab #3
+Last modified: 09/18/2026
+Purpose: Web Programming
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice 3 - Password Verification</title>
+</head>
+<body>
+    <h1>Password Verification</h1>
+    
+    <label for="pass1">Enter Password (at least 8 characters):</label><br>
+    <input type="password" id="pass1"><br><br>
+    
+    <label for="pass2">Confirm Password:</label><br>
+    <input type="password" id="pass2"><br><br>
+    
+    <button onclick="verifyPasswords()">Verify</button>
+
+    <script>
+        function verifyPasswords() {
+            var p1 = document.getElementById("pass1").value;
+            var p2 = document.getElementById("pass2").value;
+
+            if (p1.length < 8 || p2.length < 8) {
+                alert("Error: Both passwords must be at least 8 characters long.");
+            } else if (p1 !== p2) {
+                alert("Error: The two passwords do not match.");
+            } else {
+                alert("Success: The two passwords match!");
+            }
+        }
+    </script>
+</body>
+</html>
